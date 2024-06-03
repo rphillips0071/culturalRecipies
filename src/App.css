@@ -1,0 +1,165 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.heading h1 {
+  font-size: 2rem;
+  color: #333;
+  margin: 0;
+}
+
+.info {
+  text-align: center;
+  margin: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.search_recipie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.search_recipie input[type="text"] {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.search_recipie button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search_recipie button:hover {
+  background-color: #0056b3;
+}
+
+.recipe_card_container, .dessert_card_container {
+  padding: 20px;
+  text-align: center;
+}
+
+.savory, .dessert {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card, .dessert_card {
+  flex: 1 1 calc(33% - 40px); /* Responsive cards, 3 per row */
+  max-width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Align text to the left */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px;
+}
+
+.card:hover, .dessert_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img, .dessert_card img {
+  width: 100%; /* Ensures the image takes the full width of its container */
+  height: 200px; /* Sets a fixed height for the images */
+  object-fit: cover; /* Ensures the image covers the area and is cropped if necessary */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card .underline, .dessert_card .underline {
+  text-decoration: underline;
+}
+
+.card h2, .dessert_card h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0px; /* Reduced margin */
+  font-weight: bold;
+  text-align: center; /* Center the heading */
+}
+
+.card h3, .dessert_card h3 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 5px; /* Reduced margin */
+  font-weight: bold;
+  text-align: center; /* Center the subheading */
+}
+
+.card .about-heading, .dessert_card .about-heading {
+  font-size: 1rem;
+  color: #777;
+  margin: 5px 0; /* Reduced margin */
+  text-align: center;
+}
+
+.card p, .dessert_card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 5px; /* Reduced margin */
+}
+
+.card_heading {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .card, .dessert_card {
+    flex: 1 1 calc(50% - 20px); /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .card, .dessert_card {
+    flex: 1 1 100%; /* 1 per row on mobile */
+  }
+
+  .heading h1 {
+    font-size: 1.5rem;
+  }
+
+  .search_recipie input[type="text"] {
+    width: 90%;
+  }
+
+  .search_recipie button {
+    width: 90%;
+  }
+}
