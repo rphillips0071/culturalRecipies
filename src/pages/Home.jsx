@@ -57,21 +57,22 @@ function Home() {
             </div>
 
             <div className='dessert_card_container'>
-                {recipeList.map((countryName, dessertCountry) => (
-                    <div key={dessertCountry}>
+                {recipeList.map((country, countryIndex) => (
+                    <div key={`dessert-${countryIndex}`}>
                         <h1>Dessert</h1>
                         <div className='dessert'>
                             <div className='dessert_card'>
-                                <img src='https://rphillips0071.github.io/culturalRecipieAPI/assets/KabuliPulao.jpg' alt="" />
-                                <h2>Country <br /> {countryName.country}</h2>
-                                <h3>Dish <br /> {countryName.dessert.name}</h3>
-                                <p>About This Dish <br />{countryName.dessert.description}</p>
+                            <img src={`https://rphillips0071.github.io/culturalRecipieAPI/assets/${country.dessert.name}.jpg`} alt="" />
+                                <h2 className='card_heading'>Country</h2> <br /> 
+                                <h3>{country.country}</h3>
+                                <h2 className='card_heading'>Dish </h2><br /> <h3>{country.dessert.name}</h3>
+                                <h2 className='card_heading'>About This Dish </h2>
+                                <p>{country.dessert.description}</p>
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-
         </>
     );
 }
