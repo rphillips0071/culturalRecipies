@@ -62,15 +62,17 @@ function Home() {
                 <br />
                 <button onClick={clickTesting}>Search</button>
                 <button onClick={handleListAllClick}>List All Recipes</button>
-                <div className='name_suggestions'>
-                    <ul>
-                        {suggestions.map((suggestion, index) => (
-                            <li key={index} onClick={() => handleSuggestionClick(suggestion)}>
-                                {suggestion}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                {suggestions.length > 0 && (
+                    <div className='name_suggestions'>
+                        <ul>
+                            {suggestions.map((suggestion, index) => (
+                                <li key={index} onClick={() => handleSuggestionClick(suggestion)}>
+                                    {suggestion}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
             </div>
             <div className='recipe_card_container'>
                 <h1>Top Savory Dishes</h1>
